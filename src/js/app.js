@@ -58,11 +58,6 @@ var App = (function() {
             return false;
         },
 
-        setPoints: function(current, callback) {
-            // update current_points on backend
-            Api.call('POST','api/index.php', 'points='+current, callback);
-        },
-
         updatePoints: function(points) {
             Actions.currentPoints = points;
             var pointElement = document.getElementById('js-current-points');
@@ -82,11 +77,10 @@ var App = (function() {
         makeAction: function(actionElement, action) {
 
             var points = Actions.currentPoints + action.points;
-            Actions.setPoints(points, function() {
+            Api.call('POST','api/index.php', 'points='+points, function() {
                 Actions.updatePoints(points);
                 Actions.disableAction(actionElement, action);
-           });
-
+            });
         },
 
         disableAction: function(actionElement, action) {

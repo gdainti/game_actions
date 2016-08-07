@@ -17,6 +17,6 @@ var Api = {
             }
         };
 
-        xhr.send();
+        xhr.send(data);
     }
 };
