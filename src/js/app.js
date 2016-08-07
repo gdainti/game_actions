@@ -77,7 +77,7 @@ var App = (function() {
         makeAction: function(actionElement, action) {
 
             var points = Actions.currentPoints + action.points;
-            Api.call('POST','api/index.php', 'points='+points, function() {
+            Api.call('POST','api/index.php', 'actionId='+action.id, function() {
                 Actions.updatePoints(points);
                 Actions.disableAction(actionElement, action);
             });

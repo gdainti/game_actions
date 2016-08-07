@@ -4,7 +4,7 @@ var Api = {
 
         var callback = callback || function() {};
         var method = method || 'GET';
-        var data = data || {};
+        var data = data || '';
 
         var xhr = new XMLHttpRequest();
         xhr.open(method, url);
