@@ -1,0 +1,11 @@
+html, body {
+  min-height: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 50px;
+  &, & * {
+    box-sizing: border-box;
+  }
+}
